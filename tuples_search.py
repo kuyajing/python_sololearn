@@ -28,7 +28,7 @@ def search_contact(contacts, name):
     # Return this message if the name is not found in the contacts list
     return f"Not Found"
 
-# Sample list of contacts
+# Sample list of contactsamt
 contacts = [
     ('James', 42),
     ('Amy', 24),
