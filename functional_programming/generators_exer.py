@@ -1,4 +1,16 @@
 '''
+'''
+
+
+def numbers(x):
+    for i in range(x):
+        if i % 2 == 0:
+            yield i
+
+print(list(numbers(11)))
+
+
+'''
 Generators
 Finding prime numbers is a common coding interview task.
 The given code defines a function isPrime(x), which returns True if x is prime.
