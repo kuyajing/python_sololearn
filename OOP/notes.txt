@@ -1,0 +1,202 @@
+Classes
+The focal point of Object Oriented Programming (OOP) are objects, which are created using classes.
+The class describes what the object will be, but is separate from the object itself. In other words, a class can be described as an object's blueprint, description, or definition.
+You can use the same class as a blueprint for creating multiple different objects.
+
+Classes are created using the keyword class and an indented block, which contains class methods (which are functions).
+Below is an example of a simple class and its objects.
+
+class Cat:
+  def __init__(self, color, legs):
+    self.color = color
+    self.legs = legs
+
+felix = Cat("ginger", 4)
+rover = Cat("dog-colored", 4)
+stumpy = Cat("brown", 3)
+PY
+This code defines a class named Cat, which has two attributes: color and legs.
+Then the class is used to create 3 separate objects of that class.
+Tap Continue to learn more!
+
+
+
+
+4
+7 Comments
+__init__
+The __init__ method is the most important method in a class.
+This is called when an instance (object) of the class is created, using the class name as a function.
+
+All methods must have self as their first parameter, although it isn't explicitly passed, Python adds the self argument to the list for you; you do not need to include it when you call the methods. Within a method definition, self refers to the instance calling the method.
+
+Instances of a class have attributes, which are pieces of data associated with them.
+In this example, Cat instances have attributes color and legs. These can be accessed by putting a dot, and the attribute name after an instance.
+In an __init__ method, self.attribute can therefore be used to set the initial value of an instance's attributes.
+
+Example:
+CODE PLAYGROUND: PY
+class Cat:
+  def __init__(self, color, legs):
+    self.color = color
+    self.legs = legs
+
+felix = Cat("ginger", 4)
+print(felix.color)
+Click to run
+In the example above, the __init__ method takes two arguments and assigns them to the object's attributes. The __init__ method is called the class constructor.
+
+Methods
+Classes can have other methods defined to add functionality to them.
+Remember, that all methods must have self as their first parameter.
+These methods are accessed using the same dot syntax as attributes.
+
+Example:
+CODE PLAYGROUND: PY
+class Dog:
+  def __init__(self, name, color):
+    self.name = name
+    self.color = color
+
+  def bark(self):
+    print("Woof!")
+
+fido = Dog("Fido", "brown")
+print(fido.name)
+fido.bark()
+Click to run
+Class attributes are shared by all instances of the class.
+
+
+Inheritance
+Inheritance provides a way to share functionality between classes.
+Imagine several classes, Cat, Dog, Rabbit and so on. Although they may differ in some ways (only Dog might have the method bark), they are likely to be similar in others (all having the attributes color and name).
+This similarity can be expressed by making them all inherit from a superclass Animal, which contains the shared functionality.
+To inherit a class from another class, put the superclass name in parentheses after the class name.
+
+Example:
+CODE PLAYGROUND: PY
+class Animal: 
+  def __init__(self, name, color):
+    self.name = name
+    self.color = color
+
+class Cat(Animal):
+  def purr(self):
+    print("Purr...")
+        
+class Dog(Animal):
+  def bark(self):
+    print("Woof!")
+
+fido = Dog("Fido", "brown")
+print(fido.color)
+fido.bark()
+Click to run
+Run the code and see how it works!
+
+Inheritance
+A class that inherits from another class is called a subclass.
+A class that is inherited from is called a superclass.
+If a class inherits from another with the same attributes or methods, it overrides them.
+
+CODE PLAYGROUND: PY
+class Wolf: 
+  def __init__(self, name, color):
+    self.name = name
+    self.color = color
+
+  def bark(self):
+    print("Grr...")
+
+class Dog(Wolf):
+  def bark(self):
+    print("Woof")
+        
+husky = Dog("Max", "grey")
+husky.bark()
+Click to run
+In the example above, Wolf is the superclass, Dog is the subcl
+
+
+Inheritance
+The function super is a useful inheritance-related function that refers to the parent class. It can be used to find the method with a certain name in an object's superclass.
+
+Example:
+CODE PLAYGROUND: PY
+class A:
+  def spam(self):
+    print(1)
+
+class B(A):
+  def spam(self):
+    print(2)
+    super().spam()
+            
+B().spam()
+Click to run
+super().spam() calls the spam method of the superclass.
+
+Magic Methods
+Magic methods are special methods which have double underscores at the beginning and end of their names.
+They are also known as dunders.
+So far, the only one we have encountered is __init__, but there are several others.
+They are used to create functionality that can't be represented as a normal method.
+
+One common use of them is operator overloading.
+This means defining operators for custom classes that allow operators such as + and * to be used on them.
+An example magic method is __add__ for +.
+
+CODE PLAYGROUND: PY
+class Vector2D:
+  def __init__(self, x, y):
+    self.x = x
+    self.y = y
+  def __add__(self, other):
+    return Vector2D(self.x + other.x, self.y + other.y)
+
+first = Vector2D(5, 7)
+second = Vector2D(3, 9)
+result = first + second
+print(result.x)
+print(result.y)
+Click to run
+The __add__ method allows for the definition of a custom behavior for the + operator in our class.
+As you can see, it adds the corresponding attributes of the objects and returns a new object, containing the result.
+Once it's defined, we can add two objects of the class together.
+
+
+
+1
+39 Comments
+Magic Methods
+More magic methods for common operators:
+__sub__ for -
+__mul__ for *
+__truediv__ for /
+__floordiv__ for //
+__mod__ for %
+__pow__ for **
+__and__ for &
+__xor__ for ^
+__or__ for |
+
+The expression x + y is translated into x.__add__(y).
+However, if x hasn't implemented __add__, and x and y are of different types, then y.__radd__(x) is called.
+There are equivalent r methods for all magic methods just mentioned.
+
+Example:
+CODE PLAYGROUND: PY
+class SpecialString:
+  def __init__(self, cont):
+    self.cont = cont
+
+  def __truediv__(self, other):
+    line = "=" * len(other.cont)
+    return "\n".join([self.cont, line, other.cont])
+
+spam = SpecialString("spam")
+hello = SpecialString("Hello world!")
+print(spam / hello)
+Click to run
+In the example above, we defined the division operation for our class SpecialString.
