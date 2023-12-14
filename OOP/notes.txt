@@ -377,3 +377,72 @@ if all(Pizza.validate_topping(i) for i in ingredients):
   pizza = Pizza(ingredients)
 Click to run
 Static methods behave like plain functions, except for the fact that you can call them from an instance of the class.
+
+Properties
+Properties provide a way of customizing access to instance attributes.
+They are created by putting the property decorator above a method, which means when the instance attribute with the same name as the method is accessed, the method will be called instead.
+One common use of a property is to make an attribute read-only.
+
+Example:
+CODE PLAYGROUND: PY
+class Pizza:
+  def __init__(self, toppings):
+    self.toppings = toppings
+    
+  @property
+  def pineapple_allowed(self):
+    return False
+
+pizza = Pizza(["cheese", "tomato"])
+print(pizza.pineapple_allowed)
+pizza.pineapple_allowed = True
+Click to run
+Run the code and see how it works!
+
+Properties
+Properties can also be set by defining setter/getter functions.
+The setter function sets the corresponding property's value.
+The getter gets the value.
+To define a setter, you need to use a decorator of the same name as the property, followed by a dot and the setter keyword.
+The same applies to defining getter functions.
+
+Example:
+CODE PLAYGROUND: PY
+class Pizza:
+  def __init__(self, toppings):
+    self.toppings = toppings
+    self._pineapple_allowed = False
+
+  @property
+  def pineapple_allowed(self):
+    return self._pineapple_allowed
+
+  @pineapple_allowed.setter
+  def pineapple_allowed(self, value):
+    if value:
+      password = input("Enter the password: ")
+      if password == "Sw0rdf1sh!":
+        self._pineapple_allowed = value
+      else:
+        raise ValueError("Alert! Intruder!")
+
+pizza = Pizza(["cheese", "tomato"])
+print(pizza.pineapple_allowed)
+pizza.pineapple_allowed = True
+print(pizza.pineapple_allowed)
+Click to run
+Run the code and see how it works!
+
+
+Fill in the blanks to make the egg attribute strongly private and access it from outside of the class.
+
+class Test:
+  
+__init
+egg = 7
+t = Test()
+print(t.
+_Test__egg
+)
+
+
