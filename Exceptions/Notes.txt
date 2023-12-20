@@ -40,3 +40,32 @@ Click to run
 As the code produces a ZeroDivisionError exception, the code in the except block is run.
 
 In the code above, the except statement defines the type of exception to handle (in our case, the ZeroDivisionError).
+
+Exception Handling
+A try statement can have multiple different except blocks to handle different exceptions.
+Multiple exceptions can also be put into a single except block using parentheses, to have the except block handle all of them.
+
+CODE PLAYGROUND: PY
+try:
+   variable = 10
+   print(variable + "hello")
+   print(variable / 2)
+except ZeroDivisionError:
+   print("Divided by zero")
+except (ValueError, TypeError):
+   print("Error occurred")
+Click to run
+You can handle as many exceptions in the except statement as you need.
+
+Exception Handling
+An except statement without any exception specified will catch all errors. These should be used sparingly, as they can catch unexpected errors and hide programming mistakes.
+
+For example:
+CODE PLAYGROUND: PY
+try:
+   word = "spam"
+   print(word / 0)
+except:
+   print("An error occurred")
+Click to run
+Exception handling is particularly useful when dealing with user input.
