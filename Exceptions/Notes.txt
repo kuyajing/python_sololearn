@@ -69,3 +69,19 @@ except:
    print("An error occurred")
 Click to run
 Exception handling is particularly useful when dealing with user input.
+
+
+finally
+After a try/except statement, a finally block can follow. It will execute after the try/except block, no matter if an exception occurred or not.
+
+CODE PLAYGROUND: PY
+try:
+   print("Hello")
+   print(1 / 0)
+except ZeroDivisionError:
+   print("Divided by zero")
+finally:
+   print("This code will run no matter what")
+Click to run
+The finally block is useful, for example, when working with files and resources: it can be used to make sure files or resources are closed or released regardless of whether an exception occurs.
+
