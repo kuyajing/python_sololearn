@@ -1,0 +1,152 @@
+Opening Files
+You can use Python to read and write the contents of files.
+This is particularly useful when you need to work with a lot of data that is saved in a file.
+For example, in data science and analytics, the data is commonly in CSV (comma-separated values) files.
+
+Let's start by working with text files, as they are the easiest to manipulate.
+Before a file can be edited, it must be opened, using the open function.
+
+myfile = open("filename.txt")
+PY
+The argument of the open function is the path to the file. If the file is in the current working directory of the program, you can specify only its name.
+
+Opening Files
+You can specify the mode used to open a file by applying a second argument to the open function.
+Sending "r" means open in read mode, which is the default.
+Sending "w" means write mode, for rewriting the contents of a file.
+Sending "a" means append mode, for adding new content to the end of the file.
+
+Adding "b" to a mode opens it in binary mode, which is used for non-text files (such as image and sound files).
+
+For example:
+
+# write mode
+open("filename.txt", "w")
+
+# read mode
+open("filename.txt", "r")
+open("filename.txt")
+
+# binary write mode
+open("filename.txt", "wb")
+PY
+You can combine modes, for example, wb from the code above opens the file in binary write mode.
+
+
+Opening Files
+Once a file has been opened and used, you should close it.
+This is done with the close method of the file object.
+
+file = open("filename.txt", "w")
+# do stuff to the file
+file.close()
+PY
+We will read/write content to files in the upcoming lessons.
+
+
+Reading Files
+The contents of a file that has been opened in text mode can be read using the read method.
+We have created a books.txt file on the server which includes titles of books. Let's read the file and output the content:
+
+CODE PLAYGROUND: PY
+file = open("/usercode/files/books.txt")
+cont = file.read()
+print(cont)
+file.close()
+Click to run
+
+
+Reading Files
+To read only a certain amount of a file, you can provide the number of bytes to read as an argument to the read function.
+Each ASCII character is 1 byte:
+
+CODE PLAYGROUND: PY
+file = open("/usercode/files/books.txt")
+print(file.read(5))
+print(file.read(7))
+print(file.read())
+file.close()
+Click to run
+This will read the first 5 characters of the file, then the next 7.
+
+Calling the read() method without an argument will return the rest of the file content.
+
+Back
+Continue
+Translate course
+
+
+Reading Files
+To retrieve each line in a file, you can use the readlines() method to return a list in which each element is a line in the file.
+
+For example:
+CODE PLAYGROUND: PY
+file = open("/usercode/files/books.txt")
+
+for line in file.readlines():
+    print(line)
+    
+file.close()
+Click to run
+If you do not need the list for each line, you can simply iterate over the file variable:
+
+CODE PLAYGROUND: PY
+file = open("/usercode/files/books.txt")
+
+for line in file:
+    print(line)
+    
+file.close()
+Click to run
+In the output, the lines are separated by blank lines, as the print function automatically adds a new line at the end of its output.
+
+
+Writing Files
+To write to files you use the write method.
+
+For example:
+CODE PLAYGROUND: PY
+file = open("newfile.txt", "w")
+file.write("This has been written to a file")
+file.close()
+Click to run
+This will create a new file called "newfile.txt" and write the content to it.
+
+Writing Files
+If you want to add content to an existing file, you can open it using the "a" mode, which stand for "append":
+
+CODE PLAYGROUND: PY
+file = open("/usercode/files/books.txt", "a")
+
+file.write("\nThe Da Vinci Code")
+file.close()
+Click to run
+This will add a new line with a new book title to the file.
+
+Remember, \n stands for a new line.
+
+Back
+Continue
+Translate course
+
+Working with Files
+It is good practice to avoid wasting resources by making sure that files are always closed after they have been used. One way of doing this is to use try and finally.
+
+CODE PLAYGROUND: PY
+try:
+  f = open("/usercode/files/books.txt")
+  cont = f.read()
+  print(cont)
+finally:
+ f.close()
+Click to run
+This ensures that the file is always closed, even i
+
+Working with Files
+An alternative way of doing this is by using with statements.This creates a temporary variable (often called f), which is only accessible in the indented block of the with statement.
+
+CODE PLAYGROUND: PY
+with open("/usercode/files/books.txt") as f:
+  print(f.read())
+Click to run
+The file is automatically closed at the end of the with statement, even if exceptions occur within it.

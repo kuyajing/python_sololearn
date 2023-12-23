@@ -1,0 +1,75 @@
+Writing Code
+Python is one of the most popular and useful languages 
+    used to give instructions to computers.
+
+The print() instruction is the easiest way to send a message to the screen or other display device.
+    print("Level Up!")
+
+Humans use code to give instructions to machines.
+
+Lesson Takeaways
+    mazing job! Python is widely used to build software and games, analyze data and program Artificial Intelligence. You learned that:
+
+    humans use code to give instructions to machines
+    the print() instruction displays a message on the screen
+Memory and Variables
+Computer programs use variables to remember important information, like items in a shopping cart, prices and discounts.
+    The line of code below tells the computer to store information in a variable called item.
+    item = "bike"
+Lesson Takeaways
+Amazing job! You learned that:
+Computer programs use variables to remember important information
+A variable has a name and a value
+You can create a variable by connecting the name and the value with an equal sign =
+In the next lesson, you'll start writing and running real code.
+
+Text Data
+Strings in Python need to be surrounded by quotation marks.
+We use quotation marks to tell Python that we are working with a piece of text data.
+Strings can be stored in variables.
+Complete the line of code to store the value "Apple" in the variable
+
+In Python, both single ' and double " quotes can be used to define strings. It doesn’t make a difference whether you choose double or single quotation marks.
+A computer program is made of lines of code. You can add as many lines and variables to your code as you need to give the computer instructions.
+
+The code in computer programs is made of statements. Statements are the instructions for the computer to follow. Real programs can contain thousands of statements.
+The print() statement is the easiest way to send a value to the screen.
+
+Lesson Takeaways
+Well done! You learned that:
+
+A piece of text is called a string
+Strings require quotation marks
+The print() statement is used to send a value to the screen
+
+Nemerical Data
+Numerical data is information that comes in the form of numbers.
+In this lesson, you'll learn how to deal with numerical data in your computer programs.
+You can perform math operations with numbers. Each print() instruction will add a value to the screen in a new line.
+Run the code below to see the result of the calculations
+
+CODE PLAYGROUND: PY
+print(7 + 3)
+print(10 - 5)
+print(5 * 3)
+print(10 / 2)
+
+Lesson Takeaways
+Great work! You completed the lesson. You learned that:
+Numerical values can be stored in variables
+You can access the value stored in a variable by calling its name
+Numerical data should not be surrounded by quotation marks
+
+Working with Variables
+Variables are key to software development. They allow you to store, label and play with data.
+
+In this lesson, you’ll learn to work with data that has been stored in variables.
+You can update the value stored in a variable. The variable will forget the previously stored value.
+
+Run the code to check the new stored value
+
+Lesson Takeaways
+Great job! You learned that:
+You can run calculations using the values stored in variables
+You can store the result of a calculation in a variable
+Updating the value of a variable is called reassigning a variable
