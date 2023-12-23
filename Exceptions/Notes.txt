@@ -85,3 +85,45 @@ finally:
 Click to run
 The finally block is useful, for example, when working with files and resources: it can be used to make sure files or resources are closed or released regardless of whether an exception occurs.
 
+else
+The else statement can also be used with try/except statements.
+In this case, the code within it is only executed if no error occurs in the try statement.
+
+Example:
+CODE PLAYGROUND: PY
+try:
+   print(1)
+except ZeroDivisionError:
+   print(2)
+else:
+   print(3)
+
+try:
+   print(1/0)
+except ZeroDivisionError:
+   print(4)
+else:
+   print(5)
+Click to run
+Run the code and see how it works!
+
+Raising Exceptions
+You can throw (or raise) exceptions when some condition occurs.
+For example, when you take user input that needs to be in a specific format, you can throw an exception when it does not meet the requirements.
+This is done using the raise statement.
+
+CODE PLAYGROUND: PY
+num = 102
+if num > 100:
+  raise ValueError
+Click to run
+
+Raising Exceptions
+Exceptions can be raised with arguments that give detail about them.
+
+For example:
+CODE PLAYGROUND: PY
+name = "123"
+raise NameError("Invalid name!")
+Click to run
+This makes it easier for other developers to understand why you raised the exception.
