@@ -1,0 +1,93 @@
+Debugging
+Coding consists of 3 steps:
+- Writing
+- Executing (or running)
+- Fixing errors (or debugging)
+
+In this lesson, you’ll start step 3: identifying and fixing errors.
+Machines will refuse to follow instructions from a human if they contain mistakes.
+The code below contains an error. Python will return an error message. "Run" the code to get the error message.
+
+CODE PLAYGROUND: PY
+message = "Debugging
+print(message)
+Click to run
+Fix the error by adding the missing closing quotation mark, then hit "Run" again.
+
+Bugs are an expected part of writing code. The trick to being a good coder is staying cool when dealing with bugs.
+
+If your code contains multiple bugs, you need to fix all of them for the code to be executed correctly.
+The computer reads and executes instructions line by line, from top to bottom. The execution of the
+     program will be interrupted at the first error encountered.
+Lesson Takeaways
+You did it! You learned that:
+Errors in code are known as bugs
+Code is executed line by line from top to bottom
+Code execution is interrupted by bugs
+In the next lesson, you'll start applying the standards and best practices that professional coders use.
+
+Standards and best practices
+Millions of coders develop and maintain computer programs every day. Universal standards and best practices are needed for collaboration.
+In this lesson you’ll start applying some of these standards and best practices used in the tech industry.
+Professional developers use comments to add descriptions and explanations to their programs.
+You can add comments to your Python code with the hash symbol #
+nake case is a popular way to create variable names in a consistent way. Snake case uses underscores _ to separate words in a variable name.
+
+Select the recommended variable name in snake case style
+Lesson Takeaways
+Great work! You learned that:
+You can add comments to your code with the hash symbol #
+Python is a case-sensitive language
+Snake case is the best practice when creating multi-word variable names
+
+Appying Best practices
+Lesson Takeaways
+You are unstoppable! You learned that:
+Spaces are not allowed in variable names
+A variable name cannot start with a number
+Best practices can help you avoid errors
+
+Inputs and outputs
+Computer programs are designed to interact with users and the outside world.
+In this lesson, you'll learn to create code that takes information in and sends information out.
+The input() instruction is the easiest way to allow a user to insert a value into your program.
+Run the code to give it a try
+CODE PLAYGROUND: PY
+message = input()
+print(message)
+
+An output is a way for the computer to communicate with the outside world. A message displayed on the screen and the sound from a speaker are examples of outputs.
+Lesson Takeaways
+You did it! You learned that:
+
+inputs and outputs help machines communicate with the outside world
+the input() instruction allows the user to enter a value into your program
+the print() instruction is used to generate an output
+
+In the next lesson, you'll learn how to handle different
+
+data types
+Data comes in different shapes and forms. Computers treat different types of data in different ways.
+String is the data type for a piece of text. The quotation marks tell the computer that a value needs to be stored as a string.
+Computers store and process different types of numbers. Integers are whole numbers without a decimal point. They can be positive, negative or zero.
+Float is the data type for numbers with decimal places, they can be positive or negative.
+The way computers operate with values depends on the data type.
+
+ 
+
+Run the code to see the output
+
+CODE PLAYGROUND: PY
+print(3 + 5) 
+print("Iron" + "Man")
+
+When you use the + addition operator with string values the two strings are joined together. 
+
+This is known as concatenation.
+Anything in quotation marks will be treated as a string, even numbers.
+You won't be able to do math operations if numbers are surrounded by quotes. They will be treated as strings.
+Lesson Takeaways
+Great job! You learned that:
+computers store and process different data types differently
+string is the data type for text
+integer and float are data types for numbers
